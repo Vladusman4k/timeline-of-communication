@@ -5,39 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Эволюция средств связи</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background: url('https://source.unsplash.com/1600x900/?technology,communication') no-repeat center center fixed; 
+            background-size: cover;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         header {
-            background-color: #2c3e50;
+            background: rgba(41, 128, 185, 0.9);
             color: #fff;
             text-align: center;
             padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #6dd5ed;
         }
 
         section {
-            padding: 20px;
-        }
-
-        .timeline {
-            margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
             max-width: 1200px;
         }
 
         .timeline h2 {
             text-align: center;
-            color: #34495e;
+            color: #2980b9;
+            margin-bottom: 40px;
+            font-size: 2em;
         }
 
         .event {
@@ -45,29 +70,49 @@
             margin: 20px 0;
             padding: 20px;
             border-left: 4px solid #2980b9;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .event:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .event h3 {
             margin: 0;
             color: #2980b9;
+            font-size: 1.5em;
         }
 
         .event p {
             margin: 10px 0 0;
+            line-height: 1.5;
+        }
+
+        .icon {
+            font-size: 40px;
+            color: #2980b9;
+            float: left;
+            margin-right: 15px;
         }
 
         iframe {
             display: block;
             margin: 40px auto;
             border: none;
+            border-radius: 8px;
+            max-width: 100%;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #2c3e50;
+            background: rgba(41, 128, 185, 0.9);
             color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -77,56 +122,75 @@
     <h1>Эволюция средств связи</h1>
 </header>
 
+<nav>
+    <a href="#telegraph">Телеграф</a>
+    <a href="#telephone">Телефон</a>
+    <a href="#radio">Радио</a>
+    <a href="#television">Телевидение</a>
+    <a href="#satellite">Спутниковая связь</a>
+    <a href="#computers">Компьютеры</a>
+    <a href="#internet">Интернет</a>
+    <a href="#social">Социальные сети</a>
+</nav>
+
 <section class="timeline">
     <h2>Временная линия</h2>
 
-    <div class="event">
+    <div class="event" id="telegraph">
+        <i class="fas fa-comments icon"></i>
         <h3>1837–1920: Эпоха телеграфа</h3>
         <p>Изобретение телеграфа Сэмюэлем Морзе в 1837 году. В течение XIX и начала XX века телеграф был основным средством связи на большие расстояния.</p>
     </div>
 
-    <div class="event">
+    <div class="event" id="telephone">
+        <i class="fas fa-phone-alt icon"></i>
         <h3>1876–1940: Эпоха телефона</h3>
         <p>Телефон был изобретен Александром Беллом в 1876 году. В начале XX века телефонные сети активно развивались.</p>
     </div>
 
-    <div class="event">
+    <div class="event" id="radio">
+        <i class="fas fa-broadcast-tower icon"></i>
         <h3>1920–1950: Эпоха радио</h3>
         <p>Радио стало массовым средством связи в 1920-е годы, особенно для новостей и развлечений.</p>
     </div>
 
-    <div class="event">
-        <h3>1930–1960: Эпоха телевидения</h3>
+    <div class="event" id="television">
+        <i class="fas fa-tv icon"></i>
+        <h3>1940–1960: Эпоха телевидения</h3>
         <p>Телевидение стало важным средством информации и развлечений в 1950-е годы. Первые телевизионные трансляции начались в 1930-х.</p>
     </div>
 
-    <div class="event">
+    <div class="event" id="satellite">
+        <i class="fas fa-satellite-dish icon"></i>
         <h3>1957–1970: Эпоха спутниковой связи</h3>
         <p>В 1957 году был запущен первый искусственный спутник "Спутник-1". Спутниковая связь ускорила глобальные коммуникации.</p>
     </div>
 
-    <div class="event">
+    <div class="event" id="computers">
+        <i class="fas fa-desktop icon"></i>
         <h3>1970–1990: Эпоха персональных компьютеров и мобильных телефонов</h3>
         <p>В 1975 году IBM представила первый персональный компьютер. В 1983 году был выпущен первый мобильный телефон Motorola DynaTAC.</p>
     </div>
 
-    <div class="event">
+    <div class="event" id="internet">
+        <i class="fas fa-globe icon"></i>
         <h3>1990–2000: Эпоха Интернета</h3>
         <p>В 1991 году Тим Бернерс-Ли представил World Wide Web. К 1990-м годам Интернет стал доступен массовому пользователю.</p>
     </div>
 
-    <div class="event">
+    <div class="event" id="social">
+        <i class="fas fa-users icon"></i>
         <h3>2000-е – настоящее время: Эпоха социальных сетей и мессенджеров</h3>
         <p>Facebook был запущен в 2004 году, а Telegram в 2013 году. Социальные сети и мессенджеры изменили способы общения в XXI веке.</p>
     </div>
 
-    <iframe src="https://udoba.org/h5p/embed/158868" width="1200" height="625" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" title="Эволюция средств связи"></iframe>
+    <iframe src="https://udoba.org/h5p/embed/158868" width="1200" height="625" title="Эволюция средств связи"></iframe>
 </section>
 
 <script src="https://udoba.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
 
 <footer>
-    <p>&copy; 2024 VDSQ | Tech. Vladusman4k</p>
+    <p>&copy; 2024 VDSQ | By. Vladusman4k</p>
 </footer>
 
 </body>
